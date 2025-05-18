@@ -2,7 +2,7 @@ title:👨‍💻 O mnie
 
 # 👨‍💻 O mnie
 
-Cześć! Mam na imię **[Twoje Imię]** i jestem pasjonatem cyberbezpieczeństwa, szczególnie w obszarze Red Team / pentestingu. 👾  
+Cześć! Mam na imię **Krystian** i jestem pasjonatem cyberbezpieczeństwa, szczególnie w obszarze Red Team / pentestingu. 👾  
 Od 2024 roku buduję swoje umiejętności w zakresie:
 
 - 🔍 Analizy podatności (vulnerability assessment)
