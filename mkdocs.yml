@@ -1,0 +1,39 @@
+site_name: Krysti4n Docs
+site_url: http://xkrysti4n.github.io/
+repo_url: https://github.com/xKrysti4n/docs
+repo_name: Krysti4n Docs
+theme:
+  name: material
+  language: pl
+  palette:
+    - scheme: slate
+      accent: indigo
+  features:
+    - navigation.tabs
+    - navigation.instant
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.code.annotate
+
+plugins:
+  - search
+  # - literate-nav
+  - awesome-nav
+
+
+markdown_extensions:
+  - attr_list
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+      toc_depth: 2
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.emoji
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tasklist
