@@ -3,7 +3,7 @@
 ## 🟢 FAZA 1:[ Fundamenty Web i HTTP](../fundamenty_html/)  (priorytet: WYSOKI) 
 - [x] Co to jest HTTP / HTTPS  
 - [x] Czym jest request i response  
-- [ ] Metody HTTP: GET, POST, PUT, DELETE, OPTIONS, HEAD  
+- [x] Metody HTTP: GET, POST, PUT, DELETE, OPTIONS, HEAD  
 - [ ] Nagłówki HTTP: User-Agent, Host, Cookie, Referer, Origin, Authorization  
 - [ ] Status codes: 200, 301, 302, 403, 404, 401, 500  
 - [ ] Cookies i sesje  
