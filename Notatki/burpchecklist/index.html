@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="http://xkrysti4n.github.io/Notatki/metody/">
+        <link rel="canonical" href="http://xkrysti4n.github.io/Notatki/burpchecklist/">
       
       
-        <link rel="prev" href="../burpchecklist/">
+        <link rel="prev" href="../../Laboratoria/lab2/">
       
       
-        <link rel="next" href="../naglowki/">
+        <link rel="next" href="../metody/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Metody HTTP - Krysti4n Docs</title>
+        <title>Burpchecklist - Krysti4n Docs</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#metody-http" class="md-skip">
+        <a href="#burp-suite-exploitation-checklist" class="md-skip">
           Przejdź do treści
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Metody HTTP
+              Burpchecklist
             
           </span>
         </div>
@@ -250,7 +250,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../burpchecklist/" class="md-tabs__link">
+        <a href="./" class="md-tabs__link">
           
   
   
@@ -495,29 +495,6 @@
                 
   
   
-  
-  
-    <li class="md-nav__item">
-      <a href="../burpchecklist/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Burpchecklist
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
     
   
   
@@ -527,15 +504,13 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
-      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   
   <span class="md-ellipsis">
-    Metody HTTP
+    Burpchecklist
     
   </span>
   
@@ -548,7 +523,7 @@
   
   
   <span class="md-ellipsis">
-    Metody HTTP
+    Burpchecklist
     
   </span>
   
@@ -561,8 +536,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -571,36 +544,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#podstawowe-metody-http" class="md-nav__link">
+  <a href="#burp-suite-exploitation-checklist" class="md-nav__link">
     <span class="md-ellipsis">
-      Podstawowe metody HTTP
+      🧠 Burp Suite Exploitation Checklist
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#przykady-uzycia" class="md-nav__link">
+  <a href="#chcesz-wiecej" class="md-nav__link">
     <span class="md-ellipsis">
-      Przykłady użycia
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kody-odpowiedzi" class="md-nav__link">
-    <span class="md-ellipsis">
-      Kody odpowiedzi
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#zagrozenia-bezpieczenstwa-i-potencjalne-exploity" class="md-nav__link">
-    <span class="md-ellipsis">
-      Zagrożenia bezpieczeństwa i potencjalne exploity
+      📥 Chcesz więcej?
     </span>
   </a>
   
@@ -610,6 +565,29 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../metody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Metody HTTP
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -758,262 +736,129 @@
   
 
 
-<h1 id="metody-http">Metody HTTP<a class="headerlink" href="#metody-http" title="Permanent link">&para;</a></h1>
-<h2 id="podstawowe-metody-http">Podstawowe metody HTTP<a class="headerlink" href="#podstawowe-metody-http" title="Permanent link">&para;</a></h2>
-<h3 id="get">GET<a class="headerlink" href="#get" title="Permanent link">&para;</a></h3>
+  <h1>Burpchecklist</h1>
+
+<h2 id="burp-suite-exploitation-checklist">🧠 <strong>Burp Suite Exploitation Checklist</strong><a class="headerlink" href="#burp-suite-exploitation-checklist" title="Permanent link">&para;</a></h2>
+<h3 id="nagowki-http">🗂 Nagłówki HTTP:<a class="headerlink" href="#nagowki-http" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Co widzisz?</th>
+<th>Co możesz przetestować?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Authorization: Bearer xyz</code></td>
+<td>🔸 Zmień token na cudzy<br>🔸 Usuń token całkiem<br>🔸 Token JWT? → sprawdź alg=none, brute force klucza</td>
+</tr>
+<tr>
+<td><code>Cookie: session=XYZ</code></td>
+<td>🔸 Podmień <code>session</code> (Insecure Direct Object Reference)<br>🔸 Dodaj <code>admin=true</code>, <code>isAdmin=1</code> itp.</td>
+</tr>
+<tr>
+<td><code>Referer: ...</code></td>
+<td>🔸 Czy aplikacja wymaga konkretnego referera?<br>🔸 Czy można obejść CSRF albo redirect?</td>
+</tr>
+<tr>
+<td><code>Origin: evil.com</code></td>
+<td>🔸 Sprawdź odpowiedź CORS: <code>Access-Control-Allow-Origin: *</code><br>🔸 Czy akceptuje nieautoryzowaną domenę?</td>
+</tr>
+<tr>
+<td><code>Host: yourdomain.com</code></td>
+<td>🔸 Spróbuj <code>Host Header Injection</code><br>🔸 Zmień hosta i sprawdź przekierowania / linki w mailach</td>
+</tr>
+<tr>
+<td><code>User-Agent: ...</code></td>
+<td>🔸 Spoofowanie klienta (np. Googlebot = większy dostęp)<br>🔸 Fuzzuj — czasem różna logika dla mobilki / bota</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="autoryzacja-i-sesje">🔐 <strong>Autoryzacja i sesje:</strong><a class="headerlink" href="#autoryzacja-i-sesje" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Co widzisz?</th>
+<th>Co możesz przetestować?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ID w URL lub body (np. <code>/profile?id=5</code>)</td>
+<td>🔸 Zmień ID → IDOR test<br>🔸 Sprawdź, czy możesz wyświetlać cudze dane</td>
+</tr>
+<tr>
+<td>Różne poziomy kont (user/admin)</td>
+<td>🔸 Zaloguj się jako user → fuzzuj admin endpointy<br>🔸 Dodaj <code>X-User-Role: admin</code> itp.</td>
+</tr>
+<tr>
+<td>Panel admina (<code>/admin</code>)</td>
+<td>🔸 Sprawdź, czy masz dostęp bez uprawnień<br>🔸 Czasem jest ukryty tylko przez brak linka</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="formularze-i-payloady">📤 <strong>Formularze i payloady:</strong><a class="headerlink" href="#formularze-i-payloady" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Co widzisz?</th>
+<th>Co możesz przetestować?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Formularz logowania / rejestracji</td>
+<td>🔸 Bruteforce (jeśli brak rate-limit)<br>🔸 SQLi w polach login/pass<br>🔸 Bypass loginów (np. <code>admin'--</code>)</td>
+</tr>
+<tr>
+<td>Pole <code>email</code> lub <code>username</code></td>
+<td>🔸 XSS<br>🔸 SQLi<br>🔸 Enumeracja użytkowników (np. różne odpowiedzi: „email nie istnieje”)</td>
+</tr>
+<tr>
+<td>Pola typu <code>comment</code>, <code>message</code>, <code>bio</code></td>
+<td>🔸 Stored XSS / Reflected XSS<br>🔸 Command Injection, jeśli trafia do shella</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="odpowiedzi-serwera">💬 <strong>Odpowiedzi serwera:</strong><a class="headerlink" href="#odpowiedzi-serwera" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Co widzisz?</th>
+<th>Co możesz przetestować?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Set-Cookie: HttpOnly; Secure</code></td>
+<td>🔸 Czy są flagi zabezpieczające?<br>🔸 Brak <code>HttpOnly</code> = możliwy XSS cookie theft</td>
+</tr>
+<tr>
+<td><code>Server: Apache/2.4.1</code></td>
+<td>🔸 Wersja → sprawdź CVE<br>🔸 Banner grabbing może pomóc w fingerprintingu</td>
+</tr>
+<tr>
+<td><code>X-Powered-By: Express</code></td>
+<td>🔸 Może wskazywać na Node.js → inne wektory ataku<br>🔸 Możesz testować podatności zależne od frameworka</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="techniki-testowe-w-burpie">🧪 <strong>Techniki testowe</strong> (w Burpie):<a class="headerlink" href="#techniki-testowe-w-burpie" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Używana do pobierania danych z serwera</li>
-<li>Parametry są przekazywane w URL</li>
-<li>Nie powinna modyfikować danych na serwerze</li>
-<li>Może być buforowana</li>
-<li>Ma ograniczenia długości URL</li>
+<li><strong>Repeater</strong> → ręczne testy, zmieniasz wartości i patrzysz na odpowiedzi</li>
+<li><strong>Intruder</strong> → automatyczne fuzzowanie (np. ID, tokenów, payloadów)</li>
+<li><strong>Logger++ / Logger4</strong> → logujesz wszystkie requesty/responsy</li>
+<li><strong>Comparer</strong> → porównuj odpowiedzi (np. admin vs user)</li>
 </ul>
-<h3 id="post">POST<a class="headerlink" href="#post" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Używana do wysyłania danych na serwer</li>
-<li>Dane są przesyłane w ciele żądania</li>
-<li>Może modyfikować dane na serwerze</li>
-<li>Nie jest buforowana</li>
-<li>Nie ma ograniczeń co do ilości przesyłanych danych</li>
-<li>Często używana do tworzenia nowych zasobów</li>
-</ul>
-<h3 id="put">PUT<a class="headerlink" href="#put" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Używana do aktualizacji istniejących zasobów</li>
-<li>Wymaga podania pełnych danych zasobu</li>
-<li>Jest idempotentna (wielokrotne wywołanie daje ten sam efekt)</li>
-<li>Często używana do aktualizacji całych zasobów</li>
-</ul>
-<h3 id="delete">DELETE<a class="headerlink" href="#delete" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Używana do usuwania zasobów</li>
-<li>Jest idempotentna</li>
-<li>Nie powinna zawierać ciała żądania</li>
-<li>Zwykle zwraca kod 204 (No Content) po pomyślnym usunięciu</li>
-</ul>
-<h3 id="options">OPTIONS<a class="headerlink" href="#options" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Używana do sprawdzenia dostępnych metod HTTP dla danego endpointu</li>
-<li>Zwraca listę obsługiwanych metod w nagłówku Allow</li>
-<li>Często używana w CORS (Cross-Origin Resource Sharing)</li>
-</ul>
-<h3 id="head">HEAD<a class="headerlink" href="#head" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Podobna do GET, ale zwraca tylko nagłówki odpowiedzi</li>
-<li>Nie zwraca ciała odpowiedzi</li>
-<li>Używana do sprawdzenia metadanych zasobu</li>
-<li>Przydatna do weryfikacji czy zasób istnieje</li>
-</ul>
-<h2 id="przykady-uzycia">Przykłady użycia<a class="headerlink" href="#przykady-uzycia" title="Permanent link">&para;</a></h2>
-<h3 id="podstawowe-przykady">Podstawowe przykłady<a class="headerlink" href="#podstawowe-przykady" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="err">GET /api/users</span>
-<span class="err">POST /api/users</span>
-<span class="err">PUT /api/users/123</span>
-<span class="err">DELETE /api/users/123</span>
-<span class="err">OPTIONS /api/users</span>
-<span class="err">HEAD /api/users/123</span>
-</code></pre></div>
-<h3 id="rozszerzone-przykady">Rozszerzone przykłady<a class="headerlink" href="#rozszerzone-przykady" title="Permanent link">&para;</a></h3>
-<h4 id="get-pobieranie-danych">GET - pobieranie danych<a class="headerlink" href="#get-pobieranie-danych" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="err"># Pobieranie listy użytkowników z filtrowaniem</span>
-<span class="err">GET /api/users?role=admin&amp;status=active</span>
-
-<span class="err"># Pobieranie konkretnego użytkownika</span>
-<span class="err">GET /api/users/123</span>
-
-<span class="err"># Pobieranie komentarzy do posta</span>
-<span class="err">GET /api/posts/456/comments</span>
-
-<span class="err"># Wyszukiwanie produktów</span>
-<span class="err">GET /api/products?category=electronics&amp;minPrice=100&amp;maxPrice=500</span>
-</code></pre></div>
-<h4 id="post-tworzenie-nowych-zasobow">POST - tworzenie nowych zasobów<a class="headerlink" href="#post-tworzenie-nowych-zasobow" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="err"># Tworzenie nowego użytkownika</span>
-<span class="err">POST /api/users</span>
-<span class="err">{</span>
-<span class="err">    &quot;name&quot;: &quot;Jan Kowalski&quot;,</span>
-<span class="err">    &quot;email&quot;: &quot;jan@example.com&quot;,</span>
-<span class="err">    &quot;password&quot;: &quot;haslo123&quot;</span>
-<span class="err">}</span>
-
-<span class="err"># Dodawanie komentarza</span>
-<span class="err">POST /api/posts/456/comments</span>
-<span class="err">{</span>
-<span class="err">    &quot;content&quot;: &quot;Świetny artykuł!&quot;,</span>
-<span class="err">    &quot;authorId&quot;: 789</span>
-<span class="err">}</span>
-
-<span class="err"># Logowanie użytkownika</span>
-<span class="err">POST /api/auth/login</span>
-<span class="err">{</span>
-<span class="err">    &quot;email&quot;: &quot;jan@example.com&quot;,</span>
-<span class="err">    &quot;password&quot;: &quot;haslo123&quot;</span>
-<span class="err">}</span>
-</code></pre></div>
-<h4 id="put-aktualizacja-zasobow">PUT - aktualizacja zasobów<a class="headerlink" href="#put-aktualizacja-zasobow" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="err"># Aktualizacja danych użytkownika</span>
-<span class="err">PUT /api/users/123</span>
-<span class="err">{</span>
-<span class="err">    &quot;name&quot;: &quot;Jan Kowalski&quot;,</span>
-<span class="err">    &quot;email&quot;: &quot;jan.nowy@example.com&quot;,</span>
-<span class="err">    &quot;phone&quot;: &quot;123456789&quot;</span>
-<span class="err">}</span>
-
-<span class="err"># Aktualizacja statusu zamówienia</span>
-<span class="err">PUT /api/orders/789</span>
-<span class="err">{</span>
-<span class="err">    &quot;status&quot;: &quot;shipped&quot;,</span>
-<span class="err">    &quot;trackingNumber&quot;: &quot;TRK123456&quot;</span>
-<span class="err">}</span>
-</code></pre></div>
-<h4 id="delete-usuwanie-zasobow">DELETE - usuwanie zasobów<a class="headerlink" href="#delete-usuwanie-zasobow" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="err"># Usuwanie użytkownika</span>
-<span class="err">DELETE /api/users/123</span>
-
-<span class="err"># Usuwanie komentarza</span>
-<span class="err">DELETE /api/posts/456/comments/789</span>
-
-<span class="err"># Anulowanie zamówienia</span>
-<span class="err">DELETE /api/orders/789</span>
-</code></pre></div>
-<h4 id="options-sprawdzanie-dostepnych-metod">OPTIONS - sprawdzanie dostępnych metod<a class="headerlink" href="#options-sprawdzanie-dostepnych-metod" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="err"># Sprawdzenie dostępnych metod dla endpointu użytkowników</span>
-<span class="err">OPTIONS /api/users</span>
-<span class="err"># Odpowiedź zawiera nagłówek Allow: GET, POST, PUT, DELETE</span>
-
-<span class="err"># Sprawdzenie dostępnych metod dla konkretnego użytkownika</span>
-<span class="err">OPTIONS /api/users/123</span>
-<span class="err"># Odpowiedź zawiera nagłówek Allow: GET, PUT, DELETE</span>
-</code></pre></div>
-<h4 id="head-sprawdzanie-metadanych">HEAD - sprawdzanie metadanych<a class="headerlink" href="#head-sprawdzanie-metadanych" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><span class="err"># Sprawdzenie czy użytkownik istnieje</span>
-<span class="err">HEAD /api/users/123</span>
-
-<span class="err"># Sprawdzenie czy plik został zmodyfikowany</span>
-<span class="err">HEAD /api/documents/report.pdf</span>
-
-<span class="err"># Sprawdzenie rozmiaru pliku</span>
-<span class="err">HEAD /api/downloads/large-file.zip</span>
-</code></pre></div>
-<h3 id="przykady-nagowkow-odpowiedzi">Przykłady nagłówków odpowiedzi<a class="headerlink" href="#przykady-nagowkow-odpowiedzi" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="err"># Odpowiedź dla GET</span>
-<span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
-<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
-<span class="na">Content-Length</span><span class="o">:</span> <span class="l">1234</span>
-<span class="na">Cache-Control</span><span class="o">:</span> <span class="l">max-age=3600</span>
-
-<span class="err">#</span><span class="w"> </span><span class="err">Odpowiedź</span><span class="w"> </span><span class="err">dla</span><span class="w"> </span><span class="err">POST</span>
-<span class="err">HTTP/</span><span class="mf">1.1</span><span class="w"> </span><span class="mi">201</span><span class="w"> </span><span class="err">Crea</span><span class="kc">te</span><span class="err">d</span>
-<span class="err">Loca</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="p">:</span><span class="w"> </span><span class="err">/api/users/</span><span class="mi">123</span>
-<span class="err">Co</span><span class="kc">ntent</span><span class="mi">-</span><span class="err">Type</span><span class="p">:</span><span class="w"> </span><span class="err">applica</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">/jso</span><span class="kc">n</span>
-
-<span class="err">#</span><span class="w"> </span><span class="err">Odpowiedź</span><span class="w"> </span><span class="err">dla</span><span class="w"> </span><span class="err">DELETE</span>
-<span class="err">HTTP/</span><span class="mf">1.1</span><span class="w"> </span><span class="mi">204</span><span class="w"> </span><span class="err">No</span><span class="w"> </span><span class="err">Co</span><span class="kc">ntent</span>
-
-<span class="err">#</span><span class="w"> </span><span class="err">Odpowiedź</span><span class="w"> </span><span class="err">dla</span><span class="w"> </span><span class="err">OPTIONS</span>
-<span class="err">HTTP/</span><span class="mf">1.1</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span>
-<span class="err">Allow</span><span class="p">:</span><span class="w"> </span><span class="err">GET</span><span class="p">,</span><span class="w"> </span><span class="err">POST</span><span class="p">,</span><span class="w"> </span><span class="err">PUT</span><span class="p">,</span><span class="w"> </span><span class="err">DELETE</span>
-</code></pre></div>
-<h2 id="kody-odpowiedzi">Kody odpowiedzi<a class="headerlink" href="#kody-odpowiedzi" title="Permanent link">&para;</a></h2>
-<ul>
-<li>200 OK - pomyślne wykonanie żądania</li>
-<li>201 Created - pomyślne utworzenie zasobu (POST)</li>
-<li>204 No Content - pomyślne wykonanie bez zwracania danych (DELETE)</li>
-<li>400 Bad Request - nieprawidłowe żądanie</li>
-<li>401 Unauthorized - brak autoryzacji</li>
-<li>403 Forbidden - brak uprawnień</li>
-<li>404 Not Found - zasób nie istnieje</li>
-<li>405 Method Not Allowed - metoda nie jest obsługiwana</li>
-</ul>
-<h2 id="zagrozenia-bezpieczenstwa-i-potencjalne-exploity">Zagrożenia bezpieczeństwa i potencjalne exploity<a class="headerlink" href="#zagrozenia-bezpieczenstwa-i-potencjalne-exploity" title="Permanent link">&para;</a></h2>
-<h3 id="get-potencjalne-exploity">GET - Potencjalne exploity<a class="headerlink" href="#get-potencjalne-exploity" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="err"># Przykład exploita XSS poprzez parametry GET</span>
-<span class="err">GET /api/search?q=&lt;script&gt;alert(&#39;XSS&#39;)&lt;/script&gt;</span>
-
-<span class="err"># Przykład exploita SQL Injection</span>
-<span class="err">GET /api/users?id=1&#39; OR &#39;1&#39;=&#39;1</span>
-
-<span class="err"># Przykład exploita Path Traversal</span>
-<span class="err">GET /api/files?path=../../../etc/passwd</span>
-</code></pre></div>
-<h3 id="post-potencjalne-exploity">POST - Potencjalne exploity<a class="headerlink" href="#post-potencjalne-exploity" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="err"># Przykład exploita CSRF</span>
-<span class="err">POST /api/transfer</span>
-<span class="err">{</span>
-<span class="err">    &quot;amount&quot;: 1000,</span>
-<span class="err">    &quot;to&quot;: &quot;attacker_account&quot;</span>
-<span class="err">}</span>
-
-<span class="err"># Przykład exploita JSON Injection</span>
-<span class="err">POST /api/users</span>
-<span class="err">{</span>
-<span class="err">    &quot;name&quot;: {&quot;$gt&quot;: &quot;&quot;},</span>
-<span class="err">    &quot;role&quot;: &quot;admin&quot;</span>
-<span class="err">}</span>
-
-<span class="err"># Przykład exploita XXE (XML External Entity)</span>
-<span class="err">POST /api/upload</span>
-<span class="err">Content-Type: application/xml</span>
-<span class="err">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
-<span class="err">&lt;!DOCTYPE data [</span>
-<span class="err">    &lt;!ENTITY file SYSTEM &quot;file:///etc/passwd&quot;&gt;</span>
-<span class="err">]&gt;</span>
-<span class="err">&lt;data&gt;&amp;file;&lt;/data&gt;</span>
-</code></pre></div>
-<h3 id="put-potencjalne-exploity">PUT - Potencjalne exploity<a class="headerlink" href="#put-potencjalne-exploity" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="err"># Przykład exploita poprzez nadpisanie plików</span>
-<span class="err">PUT /api/files/config.json</span>
-<span class="err">{</span>
-<span class="err">    &quot;admin&quot;: true,</span>
-<span class="err">    &quot;permissions&quot;: &quot;all&quot;</span>
-<span class="err">}</span>
-
-<span class="err"># Przykład exploita poprzez modyfikację uprawnień</span>
-<span class="err">PUT /api/users/123/permissions</span>
-<span class="err">{</span>
-<span class="err">    &quot;role&quot;: &quot;admin&quot;,</span>
-<span class="err">    &quot;access_level&quot;: &quot;superuser&quot;</span>
-<span class="err">}</span>
-</code></pre></div>
-<h3 id="delete-potencjalne-exploity">DELETE - Potencjalne exploity<a class="headerlink" href="#delete-potencjalne-exploity" title="Permanent link">&para;</a></h3>
-<div class="highlight"><pre><span></span><code><span class="err"># Przykład exploita poprzez masowe usuwanie</span>
-<span class="err">DELETE /api/users?confirm=false</span>
-
-<span class="err"># Przykład exploita poprzez usuwanie systemowych plików</span>
-<span class="err">DELETE /api/files?path=/var/www/html/index.php</span>
-</code></pre></div>
-<h3 id="bezpieczne-praktyki">Bezpieczne praktyki<a class="headerlink" href="#bezpieczne-praktyki" title="Permanent link">&para;</a></h3>
-<ol>
-<li>Walidacja danych wejściowych</li>
-<li>Sprawdzanie typów danych</li>
-<li>Sanityzacja parametrów</li>
-<li>
-<p>Walidacja długości i formatu</p>
-</li>
-<li>
-<p>Autoryzacja i uwierzytelnianie</p>
-</li>
-<li>Używanie tokenów JWT</li>
-<li>Implementacja CORS</li>
-<li>
-<p>Rate limiting</p>
-</li>
-<li>
-<p>Zabezpieczenia przed popularnymi atakami</p>
-</li>
-<li>CSRF tokens</li>
-<li>Content Security Policy (CSP)</li>
-<li>XSS filters</li>
-<li>
-<p>SQL injection prevention</p>
-</li>
-<li>
-<p>Logowanie i monitorowanie</p>
-</li>
-<li>Logowanie podejrzanych żądań</li>
-<li>Monitorowanie nietypowych wzorców</li>
-<li>Alerty bezpieczeństwa</li>
-</ol>
+<hr />
+<h2 id="chcesz-wiecej">📥 Chcesz więcej?<a class="headerlink" href="#chcesz-wiecej" title="Permanent link">&para;</a></h2>
+<p>Mogę dorzucić konkretne payloady (XSS, SQLi, XXE, etc), checklistę CORS, CSRF, fuzzowania, bypassów auth...
+Powiedz tylko, czy chcesz wersję do Logseq / Obsidian z checkboxami ✅📝</p>
+<p>Albo — daj link do konkretnego labu, a zrobimy checklistę pod ten target 🛠️</p>
 
 
 
