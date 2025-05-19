@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="http://xkrysti4n.github.io/Notatki/metody/">
+        <link rel="canonical" href="http://xkrysti4n.github.io/Notatki/fundamenty_html/">
       
       
         <link rel="prev" href="../burpchecklist/">
       
       
-        <link rel="next" href="../naglowki/">
+        <link rel="next" href="../OWASP%2010/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Metody HTTP - Krysti4n Docs</title>
+        <title>Fundamenty HTTP - Krysti4n Docs</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#metody-http" class="md-skip">
+        <a href="#fundamenty-http" class="md-skip">
           Przejdź do treści
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Metody HTTP
+              Fundamenty HTTP
             
           </span>
         </div>
@@ -503,7 +503,7 @@
   
   
   <span class="md-ellipsis">
-    Burpchecklist
+    Burp Suite Exploitation Checklist
     
   </span>
   
@@ -535,7 +535,7 @@
   
   
   <span class="md-ellipsis">
-    Metody HTTP
+    Fundamenty HTTP
     
   </span>
   
@@ -548,7 +548,7 @@
   
   
   <span class="md-ellipsis">
-    Metody HTTP
+    Fundamenty HTTP
     
   </span>
   
@@ -580,27 +580,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#przykady-uzycia" class="md-nav__link">
+  <a href="#nagowki-http" class="md-nav__link">
     <span class="md-ellipsis">
-      Przykłady użycia
+      Nagłówki HTTP
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#kody-odpowiedzi" class="md-nav__link">
+  <a href="#cookies-sesje-i-tokeny" class="md-nav__link">
     <span class="md-ellipsis">
-      Kody odpowiedzi
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#zagrozenia-bezpieczenstwa-i-potencjalne-exploity" class="md-nav__link">
-    <span class="md-ellipsis">
-      Zagrożenia bezpieczeństwa i potencjalne exploity
+      Cookies, Sesje i Tokeny
     </span>
   </a>
   
@@ -622,12 +613,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../naglowki/" class="md-nav__link">
+      <a href="../OWASP%2010/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    📦 Nagłówki HTTP
+    OWASP 10
     
   </span>
   
@@ -758,7 +749,7 @@
   
 
 
-<h1 id="metody-http">Metody HTTP<a class="headerlink" href="#metody-http" title="Permanent link">&para;</a></h1>
+<h1 id="fundamenty-http">Fundamenty HTTP<a class="headerlink" href="#fundamenty-http" title="Permanent link">&para;</a></h1>
 <h2 id="podstawowe-metody-http">Podstawowe metody HTTP<a class="headerlink" href="#podstawowe-metody-http" title="Permanent link">&para;</a></h2>
 <h3 id="get">GET<a class="headerlink" href="#get" title="Permanent link">&para;</a></h3>
 <ul>
@@ -804,7 +795,7 @@
 <li>Używana do sprawdzenia metadanych zasobu</li>
 <li>Przydatna do weryfikacji czy zasób istnieje</li>
 </ul>
-<h2 id="przykady-uzycia">Przykłady użycia<a class="headerlink" href="#przykady-uzycia" title="Permanent link">&para;</a></h2>
+<h3 id="przykady-uzycia">Przykłady użycia<a class="headerlink" href="#przykady-uzycia" title="Permanent link">&para;</a></h3>
 <h3 id="podstawowe-przykady">Podstawowe przykłady<a class="headerlink" href="#podstawowe-przykady" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="err">GET /api/users</span>
 <span class="err">POST /api/users</span>
@@ -914,7 +905,7 @@
 <span class="err">HTTP/</span><span class="mf">1.1</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="err">OK</span>
 <span class="err">Allow</span><span class="p">:</span><span class="w"> </span><span class="err">GET</span><span class="p">,</span><span class="w"> </span><span class="err">POST</span><span class="p">,</span><span class="w"> </span><span class="err">PUT</span><span class="p">,</span><span class="w"> </span><span class="err">DELETE</span>
 </code></pre></div>
-<h2 id="kody-odpowiedzi">Kody odpowiedzi<a class="headerlink" href="#kody-odpowiedzi" title="Permanent link">&para;</a></h2>
+<h3 id="kody-odpowiedzi">Kody odpowiedzi<a class="headerlink" href="#kody-odpowiedzi" title="Permanent link">&para;</a></h3>
 <ul>
 <li>200 OK - pomyślne wykonanie żądania</li>
 <li>201 Created - pomyślne utworzenie zasobu (POST)</li>
@@ -925,7 +916,7 @@
 <li>404 Not Found - zasób nie istnieje</li>
 <li>405 Method Not Allowed - metoda nie jest obsługiwana</li>
 </ul>
-<h2 id="zagrozenia-bezpieczenstwa-i-potencjalne-exploity">Zagrożenia bezpieczeństwa i potencjalne exploity<a class="headerlink" href="#zagrozenia-bezpieczenstwa-i-potencjalne-exploity" title="Permanent link">&para;</a></h2>
+<h3 id="zagrozenia-bezpieczenstwa-i-potencjalne-exploity">Zagrożenia bezpieczeństwa i potencjalne exploity<a class="headerlink" href="#zagrozenia-bezpieczenstwa-i-potencjalne-exploity" title="Permanent link">&para;</a></h3>
 <h3 id="get-potencjalne-exploity">GET - Potencjalne exploity<a class="headerlink" href="#get-potencjalne-exploity" title="Permanent link">&para;</a></h3>
 <div class="highlight"><pre><span></span><code><span class="err"># Przykład exploita XSS poprzez parametry GET</span>
 <span class="err">GET /api/search?q=&lt;script&gt;alert(&#39;XSS&#39;)&lt;/script&gt;</span>
@@ -1014,6 +1005,349 @@
 <li>Monitorowanie nietypowych wzorców</li>
 <li>Alerty bezpieczeństwa</li>
 </ol>
+<hr />
+<h2 id="nagowki-http">Nagłówki HTTP<a class="headerlink" href="#nagowki-http" title="Permanent link">&para;</a></h2>
+<p>Nagłówki HTTP to <strong>dodatkowe dane przesyłane w żądaniu (request)</strong> lub odpowiedzi (response). Służą np. do identyfikacji klienta, autoryzacji, przesyłania ciasteczek, itp.</p>
+<hr />
+<h3 id="kluczowe-nagowki-http">Kluczowe nagłówki HTTP<a class="headerlink" href="#kluczowe-nagowki-http" title="Permanent link">&para;</a></h3>
+<h3 id="user-agent">🧠 <code>User-Agent</code><a class="headerlink" href="#user-agent" title="Permanent link">&para;</a></h3>
+<p>Opisuje przeglądarkę lub klienta, który wysyła żądanie.
+Przykład:
+<div class="highlight"><pre><span></span><code>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124.0
+</code></pre></div>
+Można go łatwo spoofować, np. przy crawlingu albo testach botów.</p>
+<p>🔍 W pentestingu: sprawdzasz, czy backend rozróżnia klientów (np. „dostęp tylko dla Safari").</p>
+<p>Przykłady:
+1. Zmiana User-Agent na starszą wersję przeglądarki:
+<div class="highlight"><pre><span></span><code>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/80.0
+</code></pre></div>
+2. Spoofing na boty wyszukiwarek:
+<div class="highlight"><pre><span></span><code>User-Agent: Googlebot/2.1
+</code></pre></div>
+3. Testowanie dostępu tylko dla mobilnych:
+<div class="highlight"><pre><span></span><code>User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X)
+</code></pre></div></p>
+<hr />
+<h3 id="host">🧠 <code>Host</code><a class="headerlink" href="#host" title="Permanent link">&para;</a></h3>
+<p>Wskazuje, do jakiego hosta kierowane jest żądanie.
+Przykład:
+<div class="highlight"><pre><span></span><code>Host: login.mojadomena.pl
+</code></pre></div>
+Umożliwia serwerowi rozróżnić, do której domeny klient się odwołuje (ważne przy virtual hosting).</p>
+<p>🔍 W pentestingu: testujesz Host Header Injection, np. przekierowania zależne od <code>Host</code>.</p>
+<p>Przykłady:
+1. Testowanie przekierowań:
+<div class="highlight"><pre><span></span><code>Host: evil.com
+</code></pre></div>
+2. Cache poisoning:
+<div class="highlight"><pre><span></span><code>Host: example.com
+X-Forwarded-Host: evil.com
+</code></pre></div>
+3. Bypass WAF:
+<div class="highlight"><pre><span></span><code>Host: 127.0.0.1
+</code></pre></div></p>
+<hr />
+<h3 id="cookie">🍪 <code>Cookie</code><a class="headerlink" href="#cookie" title="Permanent link">&para;</a></h3>
+<p>Przesyła ciasteczka (np. sesyjne, identyfikacyjne).
+Przykład:
+<div class="highlight"><pre><span></span><code>Cookie: sessionid=abc123; is_admin=true
+</code></pre></div></p>
+<p>🔍 W pentestingu: testujesz przejęcie sesji (Session Fixation / Session Hijacking), manipulujesz ciastkami, np. <code>is_admin=true</code>.</p>
+<p>Przykłady:
+1. Session Fixation:
+<div class="highlight"><pre><span></span><code>Cookie: PHPSESSID=123456789
+</code></pre></div>
+2. Manipulacja uprawnieniami:
+<div class="highlight"><pre><span></span><code>Cookie: role=admin; is_admin=1; access_level=superuser
+</code></pre></div>
+3. XSS w ciasteczkach:
+<div class="highlight"><pre><span></span><code>Cookie: user=&lt;script&gt;alert(1)&lt;/script&gt;
+</code></pre></div></p>
+<hr />
+<h3 id="referer-z-literowka-z-historycznych-powodow">🧠 <code>Referer</code> <em>(z literówką z historycznych powodów)</em><a class="headerlink" href="#referer-z-literowka-z-historycznych-powodow" title="Permanent link">&para;</a></h3>
+<p>Pokazuje skąd przyszło żądanie, czyli URL strony, z której użytkownik kliknął link.
+Przykład:
+<div class="highlight"><pre><span></span><code>Referer: https://example.com/login
+</code></pre></div></p>
+<p>🔍 W pentestingu: możesz sprawdzać, czy aplikacja ufa Refererowi, np. w przypadku „tylko użytkownicy z naszej strony mogą...". Przydaje się do testowania CSRF, jeśli Referer jest jedynym zabezpieczeniem.</p>
+<p>Przykłady:
+1. Bypass sprawdzania Referer:
+<div class="highlight"><pre><span></span><code>Referer: https://trusted-site.com
+</code></pre></div>
+2. CSRF exploit:
+<div class="highlight"><pre><span></span><code>Referer: https://evil.com
+</code></pre></div>
+3. Empty Referer:
+<div class="highlight"><pre><span></span><code>Referer: 
+</code></pre></div></p>
+<hr />
+<h3 id="origin">🧠 <code>Origin</code><a class="headerlink" href="#origin" title="Permanent link">&para;</a></h3>
+<p>Pokazuje domenę źródłową bez ścieżki (bardziej zaufany niż Referer).
+Przykład:
+<div class="highlight"><pre><span></span><code>Origin: https://mojastrona.pl
+</code></pre></div></p>
+<p>🔍 W pentestingu: bardzo ważny przy CORS (Cross-Origin Resource Sharing)! Jeśli Origin jest źle sprawdzany → CORS misconfiguration → można kraść dane z cudzych sesji.</p>
+<p>Przykłady:
+1. CORS bypass:
+<div class="highlight"><pre><span></span><code>Origin: https://evil.com
+</code></pre></div>
+2. Null Origin:
+<div class="highlight"><pre><span></span><code>Origin: null
+</code></pre></div>
+3. Spoofing zaufanej domeny:
+<div class="highlight"><pre><span></span><code>Origin: https://trusted-site.com
+</code></pre></div></p>
+<hr />
+<h3 id="authorization">🧠<code>Authorization</code><a class="headerlink" href="#authorization" title="Permanent link">&para;</a></h3>
+<p>Przesyła token lub dane logowania.
+Przykład (Basic Auth):
+<div class="highlight"><pre><span></span><code>Authorization: Basic dXNlcjpwYXNz
+</code></pre></div>
+Przykład (Bearer token):
+<div class="highlight"><pre><span></span><code>Authorization: Bearer eyJhbGciOi...
+</code></pre></div></p>
+<p>🔍 W pentestingu: testujesz czy tokeny są przewidywalne, czy można używać tokenu z innym użytkownikiem, czy można zadziałać bez nagłówka i uzyskać dostęp (Broken Access Control).</p>
+<p>Przykłady:
+1. Token replay:
+<div class="highlight"><pre><span></span><code>Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+</code></pre></div>
+2. Basic Auth bypass:
+<div class="highlight"><pre><span></span><code>Authorization: Basic YWRtaW46YWRtaW4=
+</code></pre></div>
+3. JWT manipulation:
+<div class="highlight"><pre><span></span><code>Authorization: Bearer eyJhbGciOiJub25lIn0.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.
+</code></pre></div></p>
+<h3 id="cheat-sheet">Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Nagłówek</th>
+<th>Co robi?</th>
+<th>Pentesting zastosowanie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>User-Agent</code></td>
+<td>Identyfikuje klienta (np. przeglądarkę)</td>
+<td>Bypassy, bot detection, spoofing</td>
+</tr>
+<tr>
+<td><code>Host</code></td>
+<td>Do jakiej domeny jest żądanie</td>
+<td>Host Header Injection</td>
+</tr>
+<tr>
+<td><code>Cookie</code></td>
+<td>Przesyła dane sesji</td>
+<td>Session Hijack / Manipulacja</td>
+</tr>
+<tr>
+<td><code>Referer</code></td>
+<td>Z jakiej strony przyszedł użytkownik</td>
+<td>CSRF, redirecty, sprawdzanie flow</td>
+</tr>
+<tr>
+<td><code>Origin</code></td>
+<td>Z jakiej domeny pochodzi przeglądarka</td>
+<td>CORS exploity</td>
+</tr>
+<tr>
+<td><code>Authorization</code></td>
+<td>Dane logowania/token</td>
+<td>Auth bypass, token replay, brute</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>Okej, robimy porządne <strong>wprowadzenie do cookies, sesji i tokenów</strong>, jakiego potrzebuje każdy kto wchodzi w <strong>web pentesting</strong> 🔐
+Będzie zrozumiale, ale dokładnie – bez owijania w bawełnę 😈</p>
+<hr />
+<h2 id="cookies-sesje-i-tokeny">Cookies, Sesje i Tokeny<a class="headerlink" href="#cookies-sesje-i-tokeny" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="co-to-sa-cookies">Co to są cookies?<a class="headerlink" href="#co-to-sa-cookies" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Cookies to <strong>małe dane</strong> (key-value) wysyłane przez serwer do przeglądarki.</li>
+<li>Przeglądarka <strong>automatycznie je dołącza</strong> do każdego requestu do tej samej domeny.</li>
+</ul>
+<p><strong>Przykład:</strong></p>
+<div class="highlight"><pre><span></span><code>Set-Cookie: sessionid=abc123; HttpOnly; Secure; Path=/; SameSite=Lax
+</code></pre></div>
+<hr />
+<h3 id="co-moze-byc-w-cookies">Co może być w cookies?<a class="headerlink" href="#co-moze-byc-w-cookies" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Klucz</th>
+<th>Opis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sessionid</code></td>
+<td>ID Twojej sesji (często losowe)</td>
+</tr>
+<tr>
+<td><code>auth_token</code>, <code>jwt</code></td>
+<td>Token JWT lub inny do autoryzacji</td>
+</tr>
+<tr>
+<td><code>isAdmin=1</code>, <code>user=admin</code></td>
+<td>Czasem aplikacje trzymają role w cookies (złe praktyki)</td>
+</tr>
+<tr>
+<td><code>lang=en</code>, <code>theme=dark</code></td>
+<td>Preferencje użytkownika</td>
+</tr>
+<tr>
+<td><code>csrftoken=XYZ</code></td>
+<td>Token anty-CSRF</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="atrybuty-cookies-bardzo-wazne">Atrybuty cookies (bardzo ważne!)<a class="headerlink" href="#atrybuty-cookies-bardzo-wazne" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Atrybut</th>
+<th>Znaczenie</th>
+<th>Bezpieczeństwo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>HttpOnly</code></td>
+<td>Nie można odczytać przez JS</td>
+<td>🔒 Chroni przed XSS kradnącym cookie</td>
+</tr>
+<tr>
+<td><code>Secure</code></td>
+<td>Wysyłane tylko przez HTTPS</td>
+<td>🔒 Chroni przed sniffingiem na HTTP</td>
+</tr>
+<tr>
+<td><code>SameSite</code></td>
+<td>Ogranicza wysyłanie do "tej samej strony"</td>
+<td>🔒 Chroni przed CSRF</td>
+</tr>
+<tr>
+<td><code>Path=/admin</code></td>
+<td>Ogranicza użycie do konkretnego patha</td>
+<td>👀 Czasem pozwala coś obejść</td>
+</tr>
+<tr>
+<td><code>Domain</code></td>
+<td>Umożliwia współdzielenie między subdomenami</td>
+<td>🔥 Ryzykowne przy wielu subdomenach</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="czym-jest-sesja">Czym jest sesja?<a class="headerlink" href="#czym-jest-sesja" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Stan po stronie serwera</strong> – np. kto jesteś, czy jesteś zalogowany.</li>
+<li>Identyfikator sesji (np. <code>sessionid=abc123</code>) trzymany jest w <strong>cookie</strong>.</li>
+<li>Backend wie, że <code>abc123</code> = np. użytkownik <code>adam</code>, rola <code>admin</code>.</li>
+</ul>
+<p><strong>Uwaga:</strong> Jeśli możesz zgadnąć / ukraść <code>sessionid</code> → <strong>przejąłeś konto</strong> (Session Hijacking).</p>
+<hr />
+<h3 id="tokeny-autoryzacyjne-np-jwt">Tokeny autoryzacyjne (np. JWT)<a class="headerlink" href="#tokeny-autoryzacyjne-np-jwt" title="Permanent link">&para;</a></h3>
+<p>Zamiast sesji na serwerze można używać <strong>tokenów</strong> – np. <strong>JWT (JSON Web Token)</strong>.</p>
+<p><strong>Przykład tokena JWT:</strong></p>
+<div class="highlight"><pre><span></span><code>eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZG1pbiI6dHJ1ZX0.signature
+</code></pre></div>
+<p>Składa się z 3 części:</p>
+<ul>
+<li><strong>Header</strong> – info o algorytmie (<code>alg</code>, <code>typ</code>)</li>
+<li><strong>Payload</strong> – dane użytkownika (<code>admin</code>, <code>id</code>, <code>email</code>)</li>
+<li><strong>Signature</strong> – podpis cyfrowy</li>
+</ul>
+<p><strong>Zaleta</strong>: Nie trzeba trzymać nic po stronie serwera
+<strong>Ryzyko</strong>: Jeśli JWT jest źle skonfigurowany, można go podrobić.</p>
+<hr />
+<h3 id="co-atakujemy">Co atakujemy?<a class="headerlink" href="#co-atakujemy" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Co widzisz?</th>
+<th>Co możesz zrobić?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cookie <code>sessionid=XYZ</code></td>
+<td>🔸 Próbuj przejąć (XSS, MitM, bruteforce ID)<br>🔸 Próbuj go zmienić</td>
+</tr>
+<tr>
+<td>Cookie <code>isAdmin=true</code></td>
+<td>🔸 Podmień na <code>false</code> / <code>1</code> / <code>0</code> i testuj dostęp</td>
+</tr>
+<tr>
+<td>JWT token w Authorization</td>
+<td>🔸 Zmień payload (<code>admin=true</code>) i zobacz czy działa<br>🔸 Sprawdź alg=none<br>🔸 Spróbuj brute-force HMAC klucza</td>
+</tr>
+<tr>
+<td>Brak <code>HttpOnly</code></td>
+<td>🔥 XSS → document.cookie = kradzież sesji</td>
+</tr>
+<tr>
+<td>Brak <code>SameSite</code></td>
+<td>🔥 CSRF możliwy</td>
+</tr>
+<tr>
+<td>Zły <code>Domain</code></td>
+<td>🔥 Można przejąć subdomenę i ukraść cookies</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="jak-testowac-w-burpie">Jak testować w Burpie?<a class="headerlink" href="#jak-testowac-w-burpie" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Zobacz zakładkę <strong>Cookies</strong> w requestach i odpowiedziach</li>
+<li>
+<p>Sprawdzaj:</p>
+</li>
+<li>
+<p>Czy <code>Set-Cookie</code> ustawia bezpieczne flagi?</p>
+</li>
+<li>Czy możesz ręcznie edytować cookie i zyskać dostęp?</li>
+<li>Czy możesz przejąć sesję?</li>
+<li>JWT można łatwo rozkodować (np. <a href="https://jwt.io">jwt.io</a>) i fuzzować payloady</li>
+</ul>
+<hr />
+<h3 id="klasyczne-ataki">Klasyczne ataki:<a class="headerlink" href="#klasyczne-ataki" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Atak</th>
+<th>Opis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Session Fixation</strong></td>
+<td>Wymuszasz sesję na ofierze, a potem ją przejmujesz</td>
+</tr>
+<tr>
+<td><strong>Session Hijacking</strong></td>
+<td>Kradniesz cudze cookies (np. przez XSS)</td>
+</tr>
+<tr>
+<td><strong>JWT alg=none</strong></td>
+<td>JWT bez podpisu = każdy może wygenerować token</td>
+</tr>
+<tr>
+<td><strong>Privilege Escalation</strong></td>
+<td>Masz token usera → zmieniasz payload na <code>admin=true</code></td>
+</tr>
+<tr>
+<td><strong>CSRF</strong></td>
+<td>Wysyłasz request ofiary z jej cookies bez jej wiedzy</td>
+</tr>
+</tbody>
+</table>
+<hr />
 
 
 
