@@ -8,10 +8,10 @@
       
       
       
-        <link rel="canonical" href="http://xkrysti4n.github.io/Notatki/naglowki/">
+        <link rel="canonical" href="http://xkrysti4n.github.io/Notatki/OWASP%2010/">
       
       
-        <link rel="prev" href="../metody/">
+        <link rel="prev" href="../fundamenty_html/">
       
       
         <link rel="next" href="../../Plan/fundamenty_html/">
@@ -22,7 +22,7 @@
     
     
       
-        <title>📦 Nagłówki HTTP - Krysti4n Docs</title>
+        <title>OWASP 10 - Krysti4n Docs</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#czym-sa-nagowki-http" class="md-skip">
+        <a href="#csrf-cross-site-request-forgery-kompletny-przewodnik" class="md-skip">
           Przejdź do treści
         </a>
       
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              📦 Nagłówki HTTP
+              OWASP 10
             
           </span>
         </div>
@@ -503,7 +503,7 @@
   
   
   <span class="md-ellipsis">
-    Burpchecklist
+    Burp Suite Exploitation Checklist
     
   </span>
   
@@ -521,12 +521,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../metody/" class="md-nav__link">
+      <a href="../fundamenty_html/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Metody HTTP
+    Fundamenty HTTP
     
   </span>
   
@@ -550,13 +550,15 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
           
   
   
   <span class="md-ellipsis">
-    📦 Nagłówki HTTP
+    OWASP 10
     
   </span>
   
@@ -569,7 +571,7 @@
   
   
   <span class="md-ellipsis">
-    📦 Nagłówki HTTP
+    OWASP 10
     
   </span>
   
@@ -582,6 +584,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -590,27 +594,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#czym-sa-nagowki-http" class="md-nav__link">
+  <a href="#csrf" class="md-nav__link">
     <span class="md-ellipsis">
-      📦 Czym są nagłówki HTTP?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#kluczowe-nagowki-http" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔑 Kluczowe nagłówki HTTP
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cheat-sheet" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔥 Cheat sheet
+      CSRF
     </span>
   </a>
   
@@ -745,191 +731,104 @@
   
 
 
-  <h1>📦 Nagłówki HTTP</h1>
+<h1 id="csrf-cross-site-request-forgery-kompletny-przewodnik">CSRF (Cross-Site Request Forgery) – Kompletny Przewodnik<a class="headerlink" href="#csrf-cross-site-request-forgery-kompletny-przewodnik" title="Permanent link">&para;</a></h1>
+<h2 id="csrf">CSRF<a class="headerlink" href="#csrf" title="Permanent link">&para;</a></h2>
+<p>CSRF to atak polegający na <strong>wymuszeniu na zalogowanym użytkowniku wykonania nieautoryzowanego żądania do aplikacji webowej</strong>, w której jest aktualnie uwierzytelniony.</p>
+<ul>
+<li>Przykład: ofiara klikając link lub odwiedzając stronę atakującego, nieświadomie zmienia swój email w banku.</li>
+<li>Przeglądarka automatycznie dołącza ciasteczka sesyjne (np. sesja, token uwierzytelniający), co umożliwia atak.</li>
+</ul>
+<hr />
+<h3 id="czy-csrf-jest-w-owasp-top-10">Czy CSRF jest w OWASP Top 10?<a class="headerlink" href="#czy-csrf-jest-w-owasp-top-10" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Był w OWASP Top 10 do 2017 roku</strong>, jako osobna kategoria (np. A8: CSRF).</li>
+<li>
+<p><strong>Od 2017 roku usunięty jako osobny punkt</strong>, bo:</p>
+</li>
+<li>
+<p>Frameworki webowe wprowadziły ochronę domyślną (tokeny CSRF).</p>
+</li>
+<li>Przeglądarki dodały <code>SameSite</code> do ciasteczek.</li>
+<li>Liczba podatnych aplikacji spadła.</li>
+<li>
+<p>Nadal jest traktowany jako część:</p>
+</li>
+<li>
+<p><strong>A05:2021 Security Misconfiguration</strong></p>
+</li>
+<li><strong>A01:2021 Broken Access Control</strong></li>
+</ul>
+<hr />
+<h3 id="jak-dziaa-atak-csrf">Jak działa atak CSRF?<a class="headerlink" href="#jak-dziaa-atak-csrf" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Użytkownik jest zalogowany w podatnej aplikacji (np. banku).</li>
+<li>Odwiedza złośliwą stronę, reklamę lub klika link.</li>
+<li>Złośliwa strona wysyła automatyczne żądanie (POST/PUT/DELETE) do aplikacji ofiary.</li>
+<li>Przeglądarka dołącza ciasteczka sesji ofiary.</li>
+<li>Serwer akceptuje żądanie bez dodatkowej weryfikacji → akcja zostaje wykonana.</li>
+</ol>
+<hr />
+<h3 id="token-csrf-co-to-jest">Token CSRF – co to jest?<a class="headerlink" href="#token-csrf-co-to-jest" title="Permanent link">&para;</a></h3>
+<ul>
+<li>To losowy, unikalny token generowany przez serwer dla sesji użytkownika.</li>
+<li>Wysyłany do klienta i musi zostać odesłany z każdym żądaniem zmieniającym stan.</li>
+<li>Serwer sprawdza, czy token jest poprawny i należy do sesji użytkownika.</li>
+<li>Brak lub błędny token oznacza odrzucenie żądania → ochrona przed CSRF.</li>
+</ul>
+<hr />
+<h3 id="jak-testowac-podatnosc-na-csrf">Jak testować podatność na CSRF?<a class="headerlink" href="#jak-testowac-podatnosc-na-csrf" title="Permanent link">&para;</a></h3>
+<h3 id="krok-1-znajdz-podatne-zadania">Krok 1: Znajdź podatne żądania<a class="headerlink" href="#krok-1-znajdz-podatne-zadania" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Szukaj w Burp Suite lub przeglądarce:</p>
+</li>
+<li>
+<p>Żądań POST, PUT, DELETE zmieniających dane.</p>
+</li>
+<li>Braku tokena CSRF w formularzu lub nagłówkach.</li>
+<li>Obecności ciasteczka sesji w żądaniu.</li>
+</ul>
+<h3 id="krok-2-stworz-prosty-exploit-html-poc">Krok 2: Stwórz prosty exploit HTML (PoC)<a class="headerlink" href="#krok-2-stworz-prosty-exploit-html-poc" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;https://oficjalna-strona.com/zmien_email&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;hidden&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;email&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;atakuj@zly.pl&quot;</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Kliknij mnie&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
 
+<span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="w">  </span><span class="nb">document</span><span class="p">.</span><span class="nx">forms</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">submit</span><span class="p">();</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+<ul>
+<li>Zapisz jako <code>csrf.html</code> i otwórz lokalnie.</li>
+<li>Jeśli serwer nie ma ochrony → zmiana zostanie wykonana automatycznie.</li>
+</ul>
+<h3 id="krok-3-sprawdz-czy-serwer-wymaga-tokena">Krok 3: Sprawdź, czy serwer wymaga tokena<a class="headerlink" href="#krok-3-sprawdz-czy-serwer-wymaga-tokena" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Jeśli bez tokena żądanie jest odrzucane — dobra ochrona.</li>
+<li>Jeśli serwer akceptuje — jest podatny.</li>
+</ul>
+<h3 id="krok-4-sprawdz-dodatkowo-nagowki">Krok 4: Sprawdź dodatkowo nagłówki<a class="headerlink" href="#krok-4-sprawdz-dodatkowo-nagowki" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Niektóre serwery próbują chronić się sprawdzając <code>Origin</code> lub <code>Referer</code>.</li>
+<li>Ta metoda jest mniej bezpieczna i może być obejścia.</li>
+</ul>
 <hr />
-<h2 id="czym-sa-nagowki-http">📦 Czym są nagłówki HTTP?<a class="headerlink" href="#czym-sa-nagowki-http" title="Permanent link">&para;</a></h2>
-<p>Nagłówki HTTP to <strong>dodatkowe dane przesyłane w żądaniu (request)</strong> lub odpowiedzi (response). Służą np. do identyfikacji klienta, autoryzacji, przesyłania ciasteczek, itp.</p>
+<h3 id="dodatkowe-rzeczy-do-sprawdzenia">Dodatkowe rzeczy do sprawdzenia<a class="headerlink" href="#dodatkowe-rzeczy-do-sprawdzenia" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>SameSite cookie</strong> — czy jest ustawione na <code>Strict</code> lub <code>Lax</code>?
+  Jeśli tak — znacznie zmniejsza ryzyko CSRF.</li>
+<li>Testuj różne metody HTTP, bo CSRF może działać na PUT, DELETE, itp.</li>
+<li>Użyj rozszerzeń Burp Suite (np. CSRF Scanner) do automatycznego wykrywania.</li>
+</ul>
 <hr />
-<h2 id="kluczowe-nagowki-http">🔑 Kluczowe nagłówki HTTP<a class="headerlink" href="#kluczowe-nagowki-http" title="Permanent link">&para;</a></h2>
-<h3 id="user-agent">🧠 <code>User-Agent</code><a class="headerlink" href="#user-agent" title="Permanent link">&para;</a></h3>
+<h3 id="podsumowanie">Podsumowanie<a class="headerlink" href="#podsumowanie" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Opisuje <strong>przeglądarkę lub klienta</strong>, który wysyła żądanie.</li>
-<li>Przykład:</li>
+<li>CSRF to wciąż realne zagrożenie, szczególnie w starszych i customowych aplikacjach.</li>
+<li>Najlepszą ochroną jest stosowanie <strong>tokenów CSRF</strong> oraz <strong>SameSite cookies</strong>.</li>
+<li>Testowanie polega na wysyłaniu żądań bez tokena i obserwowaniu reakcji serwera.</li>
+<li>CSRF nie jest już osobną kategorią w OWASP Top 10, ale jest wciąż ważnym problemem.</li>
 </ul>
-<p><div class="highlight"><pre><span></span><code>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/124.0
-</code></pre></div>
-* Można go łatwo <strong>spoofować</strong>, np. przy crawlingu albo testach botów.</p>
-<p>🔍 W pentestingu: sprawdzasz, czy backend rozróżnia klientów (np. „dostęp tylko dla Safari").</p>
-<p>Przykłady:
-1. Zmiana User-Agent na starszą wersję przeglądarki:
-<div class="highlight"><pre><span></span><code>User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/80.0
-</code></pre></div>
-2. Spoofing na boty wyszukiwarek:
-<div class="highlight"><pre><span></span><code>User-Agent: Googlebot/2.1
-</code></pre></div>
-3. Testowanie dostępu tylko dla mobilnych:
-<div class="highlight"><pre><span></span><code>User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 14_0 like Mac OS X)
-</code></pre></div></p>
 <hr />
-<h3 id="host">🧠 <code>Host</code><a class="headerlink" href="#host" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Wskazuje, <strong>do jakiego hosta</strong> kierowane jest żądanie.</li>
-<li>Przykład:</li>
-</ul>
-<p><div class="highlight"><pre><span></span><code>Host: login.mojadomena.pl
-</code></pre></div>
-* Umożliwia serwerowi rozróżnić, do której domeny klient się odwołuje (ważne przy <strong>virtual hosting</strong>).</p>
-<p>🔍 W pentestingu: testujesz <strong>Host Header Injection</strong>, np. przekierowania zależne od <code>Host</code>.</p>
-<p>Przykłady:
-1. Testowanie przekierowań:
-<div class="highlight"><pre><span></span><code>Host: evil.com
-</code></pre></div>
-2. Cache poisoning:
-<div class="highlight"><pre><span></span><code>Host: example.com
-X-Forwarded-Host: evil.com
-</code></pre></div>
-3. Bypass WAF:
-<div class="highlight"><pre><span></span><code>Host: 127.0.0.1
-</code></pre></div></p>
-<hr />
-<h3 id="cookie">🍪 <code>Cookie</code><a class="headerlink" href="#cookie" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Przesyła <strong>ciasteczka</strong> (np. sesyjne, identyfikacyjne).</li>
-<li>Przykład:</li>
-</ul>
-<div class="highlight"><pre><span></span><code>Cookie: sessionid=abc123; is_admin=true
-</code></pre></div>
-<p>🔍 W pentestingu:</p>
-<ul>
-<li>Testujesz <strong>przejęcie sesji</strong> (Session Fixation / Session Hijacking),</li>
-<li>Manipulujesz ciastkami, np. <code>is_admin=true</code>.</li>
-</ul>
-<p>Przykłady:
-1. Session Fixation:
-<div class="highlight"><pre><span></span><code>Cookie: PHPSESSID=123456789
-</code></pre></div>
-2. Manipulacja uprawnieniami:
-<div class="highlight"><pre><span></span><code>Cookie: role=admin; is_admin=1; access_level=superuser
-</code></pre></div>
-3. XSS w ciasteczkach:
-<div class="highlight"><pre><span></span><code>Cookie: user=&lt;script&gt;alert(1)&lt;/script&gt;
-</code></pre></div></p>
-<hr />
-<h3 id="referer-z-literowka-z-historycznych-powodow">🧠 <code>Referer</code> <em>(z literówką z historycznych powodów)</em><a class="headerlink" href="#referer-z-literowka-z-historycznych-powodow" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Pokazuje <strong>skąd przyszło żądanie</strong>, czyli URL strony, z której użytkownik kliknął link.</li>
-<li>Przykład:</li>
-</ul>
-<div class="highlight"><pre><span></span><code>Referer: https://example.com/login
-</code></pre></div>
-<p>🔍 W pentestingu:</p>
-<ul>
-<li>Możesz sprawdzać, czy aplikacja <strong>ufa Refererowi</strong>, np. w przypadku „tylko użytkownicy z naszej strony mogą...”.</li>
-<li>Przydaje się do testowania <strong>CSRF</strong>, jeśli Referer jest jedynym zabezpieczeniem.</li>
-</ul>
-<p>Przykłady:
-1. Bypass sprawdzania Referer:
-<div class="highlight"><pre><span></span><code>Referer: https://trusted-site.com
-</code></pre></div>
-2. CSRF exploit:
-<div class="highlight"><pre><span></span><code>Referer: https://evil.com
-</code></pre></div>
-3. Empty Referer:
-<div class="highlight"><pre><span></span><code>Referer: 
-</code></pre></div></p>
-<hr />
-<h3 id="origin">🧠 <code>Origin</code><a class="headerlink" href="#origin" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Pokazuje <strong>domenę źródłową</strong> bez ścieżki (bardziej zaufany niż Referer).</li>
-<li>Przykład:</li>
-</ul>
-<div class="highlight"><pre><span></span><code>Origin: https://mojastrona.pl
-</code></pre></div>
-<p>🔍 W pentestingu:</p>
-<ul>
-<li>Bardzo ważny przy <strong>CORS (Cross-Origin Resource Sharing)</strong>!</li>
-<li>Jeśli Origin jest źle sprawdzany → <strong>CORS misconfiguration</strong> → można kraść dane z cudzych sesji.</li>
-</ul>
-<p>Przykłady:
-1. CORS bypass:
-<div class="highlight"><pre><span></span><code>Origin: https://evil.com
-</code></pre></div>
-2. Null Origin:
-<div class="highlight"><pre><span></span><code>Origin: null
-</code></pre></div>
-3. Spoofing zaufanej domeny:
-<div class="highlight"><pre><span></span><code>Origin: https://trusted-site.com
-</code></pre></div></p>
-<hr />
-<h3 id="authorization">🧠<code>Authorization</code><a class="headerlink" href="#authorization" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Przesyła <strong>token lub dane logowania</strong>.</li>
-<li>Przykład (Basic Auth):</li>
-</ul>
-<p><div class="highlight"><pre><span></span><code>Authorization: Basic dXNlcjpwYXNz
-</code></pre></div>
-* Przykład (Bearer token):</p>
-<div class="highlight"><pre><span></span><code>Authorization: Bearer eyJhbGciOi...
-</code></pre></div>
-<p>🔍 W pentestingu:</p>
-<ul>
-<li>Testujesz czy tokeny są przewidywalne,</li>
-<li>Czy można używać tokenu z innym użytkownikiem,</li>
-<li>Czy można zadziałać bez nagłówka i uzyskać dostęp (Broken Access Control).</li>
-</ul>
-<p>Przykłady:
-1. Token replay:
-<div class="highlight"><pre><span></span><code>Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
-</code></pre></div>
-2. Basic Auth bypass:
-<div class="highlight"><pre><span></span><code>Authorization: Basic YWRtaW46YWRtaW4=
-</code></pre></div>
-3. JWT manipulation:
-<div class="highlight"><pre><span></span><code>Authorization: Bearer eyJhbGciOiJub25lIn0.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.
-</code></pre></div></p>
-<h2 id="cheat-sheet">🔥 Cheat sheet<a class="headerlink" href="#cheat-sheet" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>Nagłówek</th>
-<th>Co robi?</th>
-<th>Pentesting zastosowanie</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>User-Agent</code></td>
-<td>Identyfikuje klienta (np. przeglądarkę)</td>
-<td>Bypassy, bot detection, spoofing</td>
-</tr>
-<tr>
-<td><code>Host</code></td>
-<td>Do jakiej domeny jest żądanie</td>
-<td>Host Header Injection</td>
-</tr>
-<tr>
-<td><code>Cookie</code></td>
-<td>Przesyła dane sesji</td>
-<td>Session Hijack / Manipulacja</td>
-</tr>
-<tr>
-<td><code>Referer</code></td>
-<td>Z jakiej strony przyszedł użytkownik</td>
-<td>CSRF, redirecty, sprawdzanie flow</td>
-</tr>
-<tr>
-<td><code>Origin</code></td>
-<td>Z jakiej domeny pochodzi przeglądarka</td>
-<td>CORS exploity</td>
-</tr>
-<tr>
-<td><code>Authorization</code></td>
-<td>Dane logowania/token</td>
-<td>Auth bypass, token replay, brute</td>
-</tr>
-</tbody>
-</table>
 
 
 

@@ -1,5 +1,4 @@
-
-## 🧠 **Burp Suite Exploitation Checklist**
+title:Burp Suite Exploitation Checklist
 
 ### 🗂 Nagłówki HTTP:
 
@@ -52,10 +51,3 @@
 * **Comparer** → porównuj odpowiedzi (np. admin vs user)
 
 ---
-
-## 📥 Chcesz więcej?
-
-Mogę dorzucić konkretne payloady (XSS, SQLi, XXE, etc), checklistę CORS, CSRF, fuzzowania, bypassów auth...
-Powiedz tylko, czy chcesz wersję do Logseq / Obsidian z checkboxami ✅📝
-
-Albo — daj link do konkretnego labu, a zrobimy checklistę pod ten target 🛠️
