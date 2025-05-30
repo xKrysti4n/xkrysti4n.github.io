@@ -11,7 +11,8 @@
 - [ ] Same-Origin Policy  
 - [ ] Znajomość jak działa przeglądarka i serwer  
 
-📚 Materiały:  
+📚 Materiały: 
+- [ ] T
 
 - [ ] [PortSwigger Web Security Academy](https://portswigger.net/web-security)
 

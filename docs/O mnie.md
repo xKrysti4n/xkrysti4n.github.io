@@ -37,9 +37,9 @@ Cybersecurity łączy **logiczne myślenie, kreatywność** i **techniczny hardc
 
 ## 🔗 Kontakt
 
-- GitHub: [https://github.com/twoja-nazwa](https://github.com/twoja-nazwa)
-- Email: `twoj.email@proton.me`
-- Portfolio: [TwojaStrona.github.io](https://twojastrona.github.io)
+- GitHub: [https://github.com/twoja-nazwa](https://github.com/xkrysti4n)
+- Email: `krysti4n1@proton.me`
+- Portfolio: [TwojaStrona.github.io](https://xkrysti4n.github.io)
 
 ---
 
